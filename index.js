@@ -87,8 +87,8 @@ function run_test() {
 
     // [[GetOwnProperty]]
     try {
-      value = Object.getOwnProperty(win, symbol);
-      log("  [[GetOwnProperty]]: Did not throw, returned " + value);
+      value = Object.getOwnPropertyDescriptor(win, symbol);
+      log("  [[GetOwnProperty]]: Did not throw, returned " + JSON.stringify(value));
     } catch (e) {
       log("  [[GetOwnProperty]]: Threw " + e);
     }

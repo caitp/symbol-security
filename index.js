@@ -1,7 +1,7 @@
 (function() { "use strict";
 
 // --- SETUP ---
-var console = document.querySelector("pre .console");
+var console = document.querySelector("pre.console");
 
 function log(...values) {
   console.textContent += values.join(" ") + "\n\n";
@@ -10,6 +10,7 @@ function log(...values) {
 var remote = document.createElement("iframe");
 remote.onload = run_test;
 remote.src = "http://ecma-international.org/ecma-262/6.0/";
+remote.style.display = "none";
 document.body.appendChild(remote);
 
 // --- TEST ---

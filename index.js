@@ -53,6 +53,77 @@ function run_test() {
       log("  [[HasProperty]]: Threw " + e);
     }
 
+    // [[GetPrototypeOf]]
+    try {
+      value = Object.getPrototypeOf(win[symbol]);
+      log("  [[GetPrototypeOf]]: Did not throw, returned " + value);
+    } catch (e) {
+      log("  [[GetPrototypeOf]]: Threw " + e);
+    }
+
+    // [[SetPrototypeOf]]
+    try {
+      value = Object.setPrototypeOf(win[symbol], null);
+      log("  [[SetPrototypeOf]]: Did not throw, returned " + value);
+    } catch (e) {
+      log("  [[SetPrototypeOf]]: Threw " + e);
+    }
+
+    // [[IsExtensible]]
+    try {
+      value = Object.isExtensible(win[symbol]);
+      log("  [[IsExtensible]]: Did not throw, returned " + value);
+    } catch (e) {
+      log("  [[IsExtensible]]: Threw " + e);
+    }
+
+    // [[PreventExtensions]]
+    try {
+      value = Object.preventExtensions(win[symbol]);
+      log("  [[PreventExtensions]]: Did not throw, returned " + value);
+    } catch (e) {
+      log("  [[PreventExtensions]]: Threw " + e);
+    }
+
+    // [[GetOwnProperty]]
+    try {
+      value = Object.getOwnProperty(win, symbol);
+      log("  [[GetOwnProperty]]: Did not throw, returned " + value);
+    } catch (e) {
+      log("  [[GetOwnProperty]]: Threw " + e);
+    }
+
+    // [[Delete]]
+    try {
+      value = delete win[symbol];
+      log("  [[Delete]]: Did not throw, returned " + value);
+    } catch (e) {
+      log("  [[Delete]]: Threw " + e);
+    }
+
+    // [[DefineOwnProperty]]
+    try {
+      value = Object.defineProperty(win, symbol, { value: "fake-value" });
+      log("  [[DefineOwnProperty]]: Did not throw, returned " + value);
+    } catch (e) {
+      log("  [[DefineOwnProperty]]: Threw " + e);
+    }
+
+    // [[Enumerate]]
+    // Testing [[Enumerate]] is probably meaningless for WKS
+
+    // [[OwnPropertyKeys]]
+    try {
+      value = Object.getOwnPropertySymbols(win);
+      if (value.indexOf(symbol) >= 0) {
+        log("  [[OwnPropertyKeys]]: Included " + symbolName);
+      } else {
+        log("  [[OwnPropertyKeys]]: Did not include " + symbolName);
+      }
+    } catch (e) {
+      log("  [[OwnPropertyKeys]]: Threw " + e);
+    }
+
     // Internal use:
     switch (symbolName) {
       case "@@toStringTag":

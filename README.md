@@ -1,4 +1,5 @@
-#spidermonkey-wks-security
+[spidermonkey-wks-security](http://caitp.github.io/spidermonkey-wks-security/)
+===========================
 
 Tests the behaviour of different kinds of accesses to Well-Known Symbols (http://www.ecma-international.org/ecma-262/6.0/#sec-well-known-symbols)
 

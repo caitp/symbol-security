@@ -10,3 +10,10 @@ This could really be used to test other browsers, but I'm using it to test the b
 Want to add an additional test? There is a lot more to do here, more internal methods to be tested, more spec-defined uses of the properties to be tested.
 
 Send a pull-request!
+
+---
+
+Other Links:
+
+- https://etherpad-mozilla.org/html5-cross-origin-objects
+- https://lists.w3.org/Archives/Public/public-script-coord/2015JulSep/0022.html
